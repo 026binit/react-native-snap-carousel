@@ -1123,17 +1123,18 @@ export default class Carousel extends Component {
     }
 
     snapToItem (index, animated = true, fireCallback = true) {
-        if (!index || index < 0) {
-            index = 0;
-        }
+        this._carouselRef.scrollToIndex({ index, animated, viewPosition: 0 });
+        // if (!index || index < 0) {
+        //     index = 0;
+        // }
 
-        const positionIndex = this._getPositionIndex(index);
+        // const positionIndex = this._getPositionIndex(index);
 
-        if (positionIndex === this._activeItem) {
-            return;
-        }
+        // if (positionIndex === this._activeItem) {
+        //     return;
+        // }
 
-        this._snapToItem(positionIndex, animated, fireCallback);
+        // this._snapToItem(positionIndex, animated, fireCallback);
     }
 
     snapToNext (animated = true, fireCallback = true) {
